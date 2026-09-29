@@ -253,7 +253,7 @@ async def try_autoplay(chat_id, popped) -> bool:
             f"https://t.me/{nand.username}?start=info_{next_id}",
             title[:23],
             duration_min,
-            "Autoplay",
+            "Aᴜᴛᴏ Pʟᴀʏ🔮",
         ),
     )
     db[chat_id][0]["mystic"] = run
