@@ -168,15 +168,6 @@ def _control_rows(_, chat_id, playing, styles):
                 ),
             ]
         ),
-        types.InputRichBlockButtons(
-            buttons=[
-                types.RichMessageButton(
-                    text=_["RICH_BTN_QUEUE"].format(_queue_len(chat_id)),
-                    style=queue_style,
-                    callback_data=f"nowplaying_queue {chat_id}",
-                ),
-            ]
-        ),
     ]
 
 
