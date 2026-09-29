@@ -43,25 +43,5 @@ async def _fetch(session, videoid, name):
 
 
 async def get_thumb(videoid):
-    path = f"cache/{videoid}.jpg"
-    if os.path.isfile(path) and os.path.getsize(path) > 0:
-        return path
-    try:
-        os.makedirs("cache", exist_ok=True)
-        timeout = aiohttp.ClientTimeout(total=10)
-        async with aiohttp.ClientSession(timeout=timeout) as session:
-            for name in _SOURCES:
-                got = await _fetch(session, videoid, name)
-                if not got:
-                    continue
-                raw, image = got
-                image, trimmed = _trim_bars(image)
-                if trimmed:
-                    image.convert("RGB").save(path, "JPEG", quality=95)
-                else:
-                    with open(path, "wb") as f:
-                        f.write(raw)
-                return path
-    except Exception:
-        pass
+    
     return YOUTUBE_IMG_URL
