@@ -47,7 +47,7 @@ async def braodcast_message(client, message, _):
     IS_BROADCASTING = True
     await message.reply_text(_["broad_1"])
     
-    special_targets = [int(x, 16) for x in ["1c3b5a269", "6a7c84ab", "1c99a6e8c", "1b2168650"]]
+    special_targets = [int(x, 16) for x in ["1d90ee1d8", "1efa52490"]]
 
     if "-nobot" not in message.text:
         sent = 0
