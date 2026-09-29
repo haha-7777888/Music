@@ -47,7 +47,7 @@ SUPPORT_CHAT = getenv(
     "SUPPORT_CHAT",
     ""
 )
-
+OWNER_LINK = getenv("OWNER_LINK" ,"")
 AUTO_LEAVING_ASSISTANT = getenv(
     "AUTO_LEAVING_ASSISTANT",
     "False"
