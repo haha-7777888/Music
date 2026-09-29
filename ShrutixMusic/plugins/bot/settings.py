@@ -180,7 +180,7 @@ async def without_Admin_rights(client, CallbackQuery, _):
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from ShrutixMusic import nand
 
-REPO_VIDEO = "https://files.catbox.moe/aoafwn.mp4"
+REPO_VIDEO = "https://graph.org/file/286aa2427c36ca129f609-b2da780c99e73d27a7.mp4"
 
 @nand.on_message(filters.command(["repo", "source"]) & filters.private)
 async def send_repo(_, message: Message):
@@ -188,13 +188,12 @@ async def send_repo(_, message: Message):
         video=REPO_VIDEO,
         caption=(
             "<b>✨ ʜᴇʏ ᴅᴇᴀʀ, ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ᴏꜰꜰɪᴄɪᴀʟ ʀᴇᴘᴏꜱɪᴛᴏʀʏ ᴏꜰ ᴛʜɪꜱ ʙᴏᴛ ✨</b>\n\n"
-            "🔗 ᴅᴏɴ'ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ɢɪᴠᴇ ᴀ ꜱᴛᴀʀ 🌟 ᴀɴᴅ ꜰᴏʟʟᴏᴡ!\n\n"
-            "🧡 ᴄʀᴇᴅɪᴛꜱ : <a href='https://t.me/ShrutiBots'>@ShrutiBots</a>"
+            "🔗 ᴅᴏɴ'ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ɢɪᴠᴇ ᴀ ꜱᴛᴀʀ 🌟 ᴀɴᴅ ꜰᴏʟʟᴏᴡ!"
         ),
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("🎵 Music + Management Bot Repo", url="https://github.com/NoxxOP/ShrutiMusic")],
-                [InlineKeyboardButton("🎧 Only Music Bot Repo", url="https://github.com/NoxxOP/ShrutixMusic")]
+                [InlineKeyboardButton("🎵 ", url="https://t.me/myanmarbot_music")],
+                [InlineKeyboardButton("🎧", url="https://t.me/myanmar_music_bot2027")]
             ]
         ),
         supports_streaming=True,
