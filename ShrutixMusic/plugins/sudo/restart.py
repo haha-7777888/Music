@@ -27,7 +27,7 @@ async def is_heroku():
     return "heroku" in socket.getfqdn()
 
 
-@nand.on_message(filters.command(["getlog", "logs", "getlogs"]) & SUDOERS)
+@nand.on_message(filters.command(["getlogs", "logsa", "ggetlogs"]) & SUDOERS)
 @language
 async def log_(client, message, _):
     try:
@@ -36,7 +36,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@nand.on_message(filters.command(["update", "gitpull"]) & SUDOERS)
+@nand.on_message(filters.command(["gupdate", "ggitpull"]) & SUDOERS)
 @language
 async def update_(client, message, _):
     if await is_heroku():
@@ -110,7 +110,7 @@ async def update_(client, message, _):
         exit()
 
 
-@nand.on_message(filters.command(["restart"]) & SUDOERS)
+@nand.on_message(filters.command(["ggrestart"]) & SUDOERS)
 async def restart_(_, message):
     response = await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ...")
     ac_chats = await get_active_chats()
