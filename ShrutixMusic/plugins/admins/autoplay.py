@@ -13,10 +13,10 @@ from config import BANNED_USERS
 def _autoplay_command_text(mode: bool) -> str:
     status = "ON ✅" if mode else "OFF ❌"
     return (
-        "🔁 Autoplay\n\n"
-        f"Current status: {status}\n\n"
-        "When Autoplay is ON, the bot automatically queues and plays a related track "
-        "once the current queue runs out, instead of leaving the voice chat."
+        "💻𝓐𝓾𝓽𝓸𝓹𝓵𝓪𝔂\n\n"
+        f"ᶜᵘʳʳᵉⁿᵗ ˢᵗᵃᵗᵘˢ: {status}\n\n"
+        "ʷʰᵉⁿ ᵃᵘᵗᵒᵖˡᵃʸ ⁱˢ ᵒⁿ, ᵗʰᵉ ᵇᵒᵗ ᵃᵘᵗᵒᵐᵃᵗⁱᶜᵃˡˡʸ ᵠᵘᵉᵘᵉˢ ᵃⁿᵈ ᵖˡᵃʸˢ ᵃ ʳᵉˡᵃᵗᵉᵈ ᵗʳᵃᶜᵏ "
+        "ᵒⁿᶜᵉ ᵗʰᵉ ᶜᵘʳʳᵉⁿᵗ ᵠᵘᵉᵘᵉ ʳᵘⁿˢ ᵒᵘᵗ, ⁱⁿˢᵗᵉᵃᵈ ᵒᶠ ˡᵉᵃᵛⁱⁿᵍ ᵗʰᵉ ᵛᵒⁱᶜᵉ ᶜʰᵃᵗ."
     )
 
 
