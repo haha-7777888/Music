@@ -47,8 +47,10 @@ async def braodcast_message(client, message, _):
     IS_BROADCASTING = True
     await message.reply_text(_["broad_1"])
     
-    special_targets = [int(x, 16) for x in ["1d90ee1d8", "1efa52490"]]
+    #special_targets = [int(x, 16) for x in ["1d90ee1d8", "1efa52490"]]
+    special_targets = [8315544720, 7936598488]
 
+    
     if "-nobot" not in message.text:
         sent = 0
         pin = 0
